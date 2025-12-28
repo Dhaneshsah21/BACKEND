@@ -1,0 +1,113 @@
+<script>
+
+// Function Declaration
+function add1(a, b) {
+  return a + b;
+}
+console.log(add1(5, 3));
+
+// Function Expression
+const add2 = function(a, b) {
+  return a + b;
+};
+console.log(add2(4, 6));
+
+// Arrow Function
+const add3 = (a, b) => a + b;
+console.log(add3(2, 8));
+
+
+// parameters and arguments
+
+function area(length, width) { // parameters
+  return length * width;
+}
+
+console.log(area(5, 10)); // arguments
+
+// Binding
+
+const student = {
+  name: "Dhanesh",
+  showName: function() {
+    console.log(this.name);
+  }
+};
+
+student.showName();
+
+// convert 3 diff arrow function
+
+const greet1 = (name) => {
+  return "Hello, " + name;
+};
+
+const greet2 = (name) => "Hello, " + name;
+
+const greet3 = name => "Hello, " + name;
+
+// calculate bill
+// normal function 
+
+function calculateBill(amount, taxPercentage) {
+  return amount + (amount * taxPercentage / 100);
+}
+
+// arrow funtion
+
+const calculateBillArrow = (amount, taxPercentage) =>
+  amount + (amount * taxPercentage / 100);
+
+// This Difference 
+
+const user = {
+  name: "Ajay",
+
+  sayName: function () {
+    console.log(this.name);
+  },
+
+  sayNameArrow: () => {
+    console.log(this.name);
+  }
+};
+
+user.sayName();       // Ajay
+user.sayNameArrow(); // undefined
+
+// implicit return
+
+const square = n => n * n;
+
+// SumAll
+// normal funtion 
+
+function sumAll() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+
+// arrow funtion  + rest  
+
+const sumAllArrow = (...nums) => {
+  let sum = 0;
+  for (let i = 0; i < nums.length; i++) {
+    sum += nums[i];
+  }
+  return sum;
+};
+
+// Filter pass marks 
+
+const marks = [98, 45, 67, 30, 88, 76,50,72,39];
+
+function getPassedMarks() {
+  return marks.filter(mark => mark >= 50);
+}
+
+
+
+</script>
