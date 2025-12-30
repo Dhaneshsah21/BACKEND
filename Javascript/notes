@@ -1,0 +1,47 @@
+1. map()
+map() always returns a new array. It is used to transform data
+and the new array will always have the same length as the
+original array. It does not modify the original array and is a
+non-mutating, chainable method. The callback function receives
+the current element, index, and the original array. It executes
+for every element even if the condition fails. It is commonly
+used for formatting data, updating object properties, and
+preparing data for UI rendering.
+
+2. reduce()
+reduce() returns a single value from an array. It combines all
+elements into one value such as a number, string, object, or
+array, depending on the logic. It processes elements from left
+to right and usually uses an initial value. The callback 
+function receives the accumulator and current value on each 
+iteration. It is useful for calculating totals, grouping data, 
+counting occurrences, and flattening arrays. If no initial 
+value is provided, the first element is used as the accumulator.
+
+3. forEach()
+forEach() is a higher-order function because it takes a 
+function as an argument. It is used only for iteration and 
+always returns undefined. It cannot be chained and does not 
+support break, continue, or return. It executes the callback 
+for every element in the array. It is mainly used for logging 
+values, updating external variables, or performing side 
+effects. It can modify the original array if elements are 
+changed directly inside the callback.
+
+4. find()
+find() is best used for searching condition-based data. It 
+returns the first element that matches the condition and stops 
+execution once a match is found. If no element matches, it 
+returns undefined and does not modify the original array. It is 
+more efficient than filter() when only one match is required. 
+It works well with arrays of objects and returns the actual 
+element, not the index.
+
+5. filter()
+filter() returns a new array containing all elements that 
+satisfy a condition. The length of the new array may be smaller 
+than the original array. It is a non-mutating method and is 
+useful when multiple matching results are required. The 
+callback function must return a boolean value. It executes for 
+every element in the array. It is commonly used for removing 
+unwanted data, validating lists, and creating subsets of data.
