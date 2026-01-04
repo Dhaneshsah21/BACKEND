@@ -1,0 +1,227 @@
+<script>
+
+// ES6 CORE TASKS
+
+// Task 1: let & const
+
+// ES5 → ES6
+let userName = "Dhanesh";
+const userAge = 21;
+
+// Block scope using let
+if (true) {
+  let message = "Block scoped message";
+  console.log(message);
+}
+// console.log(message); //  Error
+
+// const reassignment error
+const country = "India";
+// country = "USA"; //  TypeError
+
+// var bug and fix using let
+for (let i = 0; i < 3; i++) {
+  setTimeout(() => console.log("let value:", i), 500);
+}
+
+//  Task 2: Arrow Functions
+
+// Normal → Arrow
+const add = (a, b) => a + b;
+
+// One parameter
+const square = x => x * x;
+
+// Return object
+const createUser = (name, age) => ({ name, age });
+
+// Arrow in map()
+const numbers = [1, 2, 3];
+const doubled = numbers.map(n => n * 2);
+console.log(doubled);
+
+
+// Task 3: Template Literals
+
+const name = "Sha";
+const age = 22;
+
+// User details
+console.log(`Name: ${name}, Age: ${age}`);
+
+// Old concat → template literal
+console.log(`Hello ${name}, welcome!`);
+
+// Multiline string
+const bio = `
+I am ${name}
+I am ${age} years old
+`;
+console.log(bio);
+
+// Expressions
+console.log(`Next year age: ${age + 1}`);
+
+
+// CLASS TASKS
+
+// Student class
+class Student {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+// BankAccount class
+class BankAccount {
+  constructor(balance) {
+    this.balance = balance;
+  }
+  deposit(amount) {
+    this.balance += amount;
+  }
+  withdraw(amount) {
+    this.balance -= amount;
+  }
+}
+
+// Create 3 objects
+const s1 = new Student("A", 20);
+const s2 = new Student("B", 21);
+const s3 = new Student("C", 22);
+
+// Function constructor → class
+function Person(name) {
+  this.name = name;
+}
+
+class PersonClass {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+// import / export (simulation)
+
+// export
+export const addNum = (a, b) => a + b;
+export const subNum = (a, b) => a - b;
+
+// default export
+export default function greet() {
+  console.log("Hello!");
+}
+
+// import example
+// import greet, { addNum, subNum } from "./file.js";
+
+
+// Destructuring
+
+// Array
+const arr = [10, 20];
+const [a, b] = arr;
+
+// Object
+const user = { id: 1, role: "admin" };
+const { id, role } = user;
+
+// Rename
+const { role: userRole } = user;
+
+// Function parameter destructuring
+function showUser({ id, role }) {
+  console.log(id, role);
+}
+
+
+// Spread Operator
+
+// Copy array
+const copyArr = [...arr];
+
+// Merge arrays
+const merged = [...arr, ...numbers];
+
+// Update object
+const updatedUser = { ...user, role: "user" };
+
+// Spread in function
+function sum(x, y, z) {
+  return x + y + z;
+}
+console.log(sum(...[1, 2, 3]));
+
+
+// Rest Operator
+
+// Unlimited arguments
+function total(...nums) {
+  return nums.reduce((a, b) => a + b, 0);
+}
+
+// Rest + destructuring
+const [first, ...rest] = [1, 2, 3, 4];
+
+// Rest vs Spread
+// Rest → collects values
+// Spread → expands values
+
+
+// Ternary Operator
+
+const num = 5;
+const evenOdd = num % 2 === 0 ? "Even" : "Odd";
+
+const mark = 40;
+const result = mark >= 35 ? "Pass" : "Fail";
+
+// Nested ternary
+const grade =
+  mark > 90 ? "A" :
+  mark > 60 ? "B" : "C";
+
+
+// Optional Chaining
+
+const apiData = {
+  user: {
+    profile: {
+      name: "Sha"
+    }
+  }
+};
+
+console.log(apiData.user?.profile?.name);
+console.log(apiData.users?.[0]?.name);
+
+
+// Nullish Coalescing (??)
+
+const value = 0;
+console.log(value || 10); 
+console.log(value ?? 10); 
+
+const text = "";
+console.log(text ?? "Default");
+
+console.log(apiData.user?.age ?? 18);
+
+
+// ES15
+
+// Promise.withResolvers()
+const { promise, resolve, reject } = Promise.withResolvers();
+
+setTimeout(() => resolve("Done"), 1000);
+
+promise.then(res => console.log(res));
+
+// Why useful?
+// → Manual control of resolve/reject
+
+// ES2024 focus
+// → Improves stability, performance, cleaner APIs
+
+</script>
