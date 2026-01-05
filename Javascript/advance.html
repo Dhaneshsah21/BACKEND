@@ -1,0 +1,86 @@
+<script>
+
+// CALLBACK
+
+// 1) setTimeout callback
+setTimeout(() => {
+  console.log("Callback 1: Message after 1 second");
+}, 1000);
+
+// 2) Callback-based calculator
+function add(a, b, callback) {
+  callback(a + b);
+}
+add(5, 3, (result) => {
+  console.log("Callback 2: Sum =", result);
+});
+
+// 3) Callback error handling
+function divide(a, b, callback) {
+  if (b === 0) {
+    callback("Error: Cannot divide by zero", null);
+  } else {
+    callback(null, a / b);
+  }
+}
+divide(10, 2, (err, res) => {
+  if (err) console.log(err);
+  else console.log("Callback 3: Result =", res);
+});
+
+
+// PROMISE
+
+// 4) Promise resolve after delay
+const promise1 = new Promise((resolve) => {
+  setTimeout(() => resolve("Promise 1 resolved"), 1000);
+});
+promise1.then(console.log);
+
+// 5) Promise reject example
+const promise2 = new Promise((_, reject) => {
+  reject("Promise 2 rejected");
+});
+promise2.catch(console.log);
+
+// 6) Promise chaining
+Promise.resolve(5)
+  .then((num) => num * 2)
+  .then((result) => console.log("Promise 3 chaining result =", result));
+
+
+// ASYNC / AWAIT
+
+// 7) Async function returning value
+async function getNumber() {
+  return 10;
+}
+getNumber().then((res) =>
+  console.log("Async 1 return value =", res)
+);
+
+// 8) try/catch error handling
+async function errorExample() {
+  try {
+    throw new Error("Async error occurred");
+  } catch (err) {
+    console.log("Async 2 caught:", err.message);
+  }
+}
+errorExample();
+
+// 9) Sequential await calls
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function sequential() {
+  await delay(500);
+  console.log("Async 3: Step 1 done");
+  await delay(500);
+  console.log("Async 3: Step 2 done");
+}
+sequential();
+
+
+</script>
