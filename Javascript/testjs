@@ -1,0 +1,76 @@
+
+1. Why let and const were introduced when var already existed?
+`var` has function scope, allows redeclaration, and causes hoisting-related bugs.
+`let` and `const` provide block scope, prevent redeclaration, and make code more
+predictable and safer. `const` also prevents reassignment.
+
+
+2. How does JavaScript decide the data type of a variable at runtime?
+JavaScript is dynamically typed, so the data type is determined by the value
+assigned at runtime, not during variable declaration.
+
+
+3. Difference between == and ===, and why companies prefer ===?
+`==` compares values after type conversion, which can lead to unexpected results.
+`===` compares both value and type strictly, so companies prefer it to avoid bugs.
+
+
+4. How do logical operators (&&, ||) help write cleaner code?
+Logical operators use short-circuit evaluation, reducing unnecessary condition
+checks and minimizing long if-else blocks, making code cleaner and readable.
+
+
+5. When would you choose switch over if-else?
+`switch` is preferred when checking a single variable against multiple fixed
+values, improving readability and maintainability over long if-else chains.
+
+
+6. Why does do-while loop execute at least once?
+Because the condition is checked after executing the loop body, ensuring the
+code runs at least one time.
+
+
+7. What happens internally when a for loop runs?
+A for loop runs in this order: initialization → condition check → code execution
+→ increment/decrement, repeating until the condition becomes false.
+
+
+8. How does array indexing work, and what if index doesn't exist?
+Arrays are zero-indexed. Accessing a non-existing index returns `undefined`
+instead of throwing an error.
+
+
+9. Difference between map() and forEach()?
+`map()` returns a new transformed array and is used for data transformation.
+`forEach()` does not return anything and is used for executing logic.
+
+
+10. Why are higher-order array methods preferred?
+They improve readability, reduce boilerplate code, support immutability, and
+are commonly used in modern JavaScript and React applications.
+
+11. How is an object stored compared to a primitive?
+Primitive values are stored directly in stack memory, while objects are stored
+in heap memory and accessed using references.
+
+
+12. Difference between for...in and Object.keys()?
+`for...in` iterates over enumerable properties including inherited ones.
+`Object.keys()` returns only the object's own properties, making it safer.
+
+
+13. Parameters vs arguments and callbacks?
+Parameters are variables in function definitions.
+Arguments are actual values passed to functions.
+Callbacks are functions passed as arguments for async or reusable logic.
+
+
+14. Why does asynchronous JavaScript not block the main thread?
+Async JavaScript uses the event loop, Web APIs, and callback queue to handle
+time-consuming tasks in the background, keeping the UI responsive.
+
+
+15. Role of V8 engine in JavaScript and React?
+V8 compiles JavaScript into optimized machine code, manages memory efficiently,
+and enables fast execution, which is essential for high-performance React apps.
+
