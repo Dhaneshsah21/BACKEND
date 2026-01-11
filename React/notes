@@ -1,0 +1,33 @@
+Class Component vs Functional Component:
+A class component in React is created using an ES6 class that extends React.
+Component and includes a render() method to return JSX, while a functional component is a simple 
+JavaScript function that returns JSX.
+Earlier, class components were required for state management and lifecycle methods, but with the 
+introduction of Hooks, functional components can now handle state and side effects, making them 
+more concise, easier to read, and the preferred choice in modern React development.
+
+Lifecycle Methods in Class Components:
+Lifecycle methods allow developers to run code at specific stages of a component’s life cycle. 
+componentDidMount() is used after the component is rendered for tasks like API calls or 
+subscriptions, componentDidUpdate() is triggered after updates to props or state and is useful for 
+responding to changes, and componentWillUnmount() is used for cleanup operations such as removing 
+event listeners or canceling timers. These methods help manage side effects in class components.
+
+setState and Its Asynchronous Nature:
+The setState() method is used in class components to update the component’s state and trigger a 
+re-render. It works asynchronously because React batches multiple state updates together to improve 
+performance and ensure efficient rendering, rather than updating the DOM immediately for every 
+state change.
+
+PureComponent vs Regular Component:
+A PureComponent is a special type of class component that performs a shallow comparison of props 
+and state using shouldComponentUpdate(). This prevents unnecessary re-renders when the data has not 
+changed, improving performance. In contrast, a regular class component re-renders every time state 
+or props change unless manually optimized.
+
+Error Boundaries in React:
+Error boundaries are special class components used to catch JavaScript errors in their child 
+component tree and display a fallback UI instead of crashing the app. They are implemented using 
+static getDerivedStateFromError() and componentDidCatch(). Error boundaries still require class 
+components because React currently does not provide a Hook-based alternative for handling rendering 
+errors.
